@@ -13,17 +13,26 @@ class PagesController extends Controller{
 		compile or process data from the model if needed
 		pass data to the correct view
 		*/
-		return view('pages/welcome');
+		return view('pages.welcome');
 
 	}
 
 	public function getAbout() {
-		return view('pages/about');
+		$first = 'Appau';
+		$last = 'Owiredu';
+
+
+        $email = 'appauowiredu@gmail.com';
+		$fullname = $first . " " .$last;
+		$data = [];
+		$data['email'] = $email;
+		$data['fullname'] = $fullname;
+		return view('pages.about')->withData($data);
 
 	}
 
 	public function getContact() {
-		return view('pages/contact');
+		return view('pages.contact');
 
 	}
 
